@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fit&Cure Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>
+      <span style="color:green">Fit</span><span style="color:yellow">&</span><span style="color:red">Cure</span>
+    </h1>
+
+    <!-- BMR & Protein -->
+    <div id="bmr-protein">
+      <h2>BMR & Protein Requirement Calculator</h2>
+      <p>BMR (Basal Metabolic Rate) indicates calories your body needs at rest for basic functions.</p>
+      <label>Weight (kg):</label>
+      <input type="number" id="userWeight" placeholder="Weight in kg">
+      <label>Age:</label>
+      <input type="number" id="userAge" placeholder="Age">
+      <label>Height (cm):</label>
+      <input type="number" id="userHeight" placeholder="Height in cm">
+      <label>Gender:</label>
+      <select id="userGender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <button class="main-btn" onclick="calculateBMRProtein()">Calculate BMR & Protein</button>
+      <p id="bmrResult" class="bmr-text"></p>
+      <p id="proteinResult" class="protein-text"></p>
+    </div>
+
+    <!-- Muscle Preference -->
+    <div id="muscle-choice">
+      <h2>Select Muscle Group to View Exercises</h2>
+      <select id="muscleSelect" class="colorful-select">
+        <option value="chest">Chest</option>
+        <option value="back">Back</option>
+        <option value="triceps">Triceps</option>
+        <option value="biceps">Biceps</option>
+        <option value="abs">Abs</option>
+        <option value="shoulders">Shoulders</option>
+        <option value="legs">Legs</option>
+      </select>
+      <button onclick="showSelectedMuscle()">Show Exercises</button>
+    </div>
+
+    <!-- Exercise Section -->
+    <div id="fitness">
+      <h2>Exercise Section</h2>
+      <div id="muscleList"></div>
+    </div>
+
+    <!-- Yoga Section -->
+    <div id="yoga">
+      <h2>Yoga Asanas</h2>
+      <div id="yogaList"></div>
+    </div>
+
+    <!-- Mental Health Section -->
+    <div id="mental">
+      <h2>Mental Health Solutions</h2>
+      <div id="mentalList"></div>
+    </div>
+
+    <!-- Diet Section -->
+    <div id="diet">
+      <h2>Weekly Diet Planner</h2>
+      <label>Food Preference:</label>
+      <button class="sub-choice-btn" onclick="generateDiet('veg')">Vegetarian</button>
+      <button class="sub-choice-btn" onclick="generateDiet('nonveg')">Non-Vegetarian</button>
+      <button class="sub-choice-btn" onclick="generateDiet('both')">Both</button>
+      <div id="dietList"></div>
+    </div>
+
+    <button id="topBtn" onclick="topFunction()">Back to Top</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
